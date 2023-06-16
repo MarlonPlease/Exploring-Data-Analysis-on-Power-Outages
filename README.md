@@ -125,13 +125,21 @@ We also  re-used a column transformer called `OneHotEncoder` on  the `'CLIMATE.C
 To get the performance of our final model, we used `pl_base.score(X_test_base, y_test_base)` which ended up giving us a value of:
 `0.0854368932038835`
 
+We felt it was a slight improvement. Similar to the baseline model, the results obtained can be generalized to unseen data because the model does not utilize any data that is not known at the time of prediction. This means that the model's performance and predictions can be considered applicable to new, unseen instances.
+
 ---
 ## Fairness Analysis
 
-After completeing out Baseline and Final Model, we continued onto setting up our code for viewing our prediction:
+After completeing out Baseline and Final Model, we continued onto setting up our code for viewing our prediction with this dataframe:
 
 | prior_2010   |   prediction |
 |:-------------|-------------:|
-| after_2010   |      1707.6  |
-| before_2010  |      3593.94 |
+| after_2010   |      2574.112211  |
+| before_2010  |      3377.037736 |
 
+Afterwards, it led us to another dataframe, this time for "accuracy": 
+
+| prior_2010   |   accuracy |
+|:-------------|-------------:|
+| after_2010   |      0.135314  |
+| before_2010  |      0.014151 |
