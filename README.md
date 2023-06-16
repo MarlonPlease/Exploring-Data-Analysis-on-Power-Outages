@@ -69,7 +69,33 @@ This is the original formatted `powerDF` from a previous project, as one can see
 |   2015 |       7 |                1 |             1.2 |                  2 |           21 |                5 |              1740 |             2.2 |       1.6687  |
 
 
+Dictionary for `'CLIMATE.CATEGORY'`:
+{
+    'normal': 1,
+    'cold': 2,
+    'warm': 3
+}
 
+Dictionary for `'CAUSE.CATEGORY'`:
+{
+    'severe weather': 1,
+    'intentional attack': 2,
+    'system operability disruption': 3,
+    'equipment failure': 4,
+    'public appeal': 5,
+    'fuel supply emergency': 6,
+    'islanding': 7
+}
+`U.S._STATE` with index bieng n+1(Example: Minnesota is 1 in the following data):
+['Minnesota' 'Tennessee' 'Wisconsin' 'West Virginia' 'Michigan' 'Texas'
+ 'Indiana' 'Alabama' 'Mississippi' 'Illinois' 'Washington' 'Arizona'
+ 'Maryland' 'Pennsylvania' 'Kentucky' 'Utah' 'Ohio' 'North Carolina'
+ 'New Jersey' 'South Carolina' 'Oregon' 'District of Columbia' 'Missouri'
+ 'Delaware' 'Iowa' 'Montana' 'New York' 'Louisiana' 'Florida' 'California'
+ 'Arkansas' 'Virginia' 'Nebraska' 'Wyoming' 'New Mexico' 'Vermont'
+ 'Georgia' 'Connecticut' 'Oklahoma' 'Massachusetts' 'Maine'
+ 'New Hampshire' 'Nevada' 'Colorado' 'Kansas' 'Hawaii' 'Idaho'
+ 'North Dakota' 'South Dakota' 'Alaska']
 
 ---
 ## Baseline Model
