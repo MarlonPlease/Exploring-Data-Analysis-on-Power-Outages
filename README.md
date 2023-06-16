@@ -69,17 +69,23 @@ This is the original formatted `powerDF` from a previous project, as one can see
 |   2015 |       7 |                1 |             1.2 |                  2 |           21 |                5 |              1740 |             2.2 |       1.6687  |
 
 
+
+
 ---
 ## Baseline Model
+Upon creating the pipeline, we used a `OneHotEncoder` on  the `'CLIMATE.CATEGORY'`, and the `'CLIMATE.REGION'` column. We felt it was apporpriate simply because they were representations of categories
+
 ---
 ## Final Model
 
 
-|   prediction |
-|-------------:|
-|      1707.6  |
-|      3593.94 |
-
 ---
 ## Fairness Analysis
+
+After completeing out Baseline and Final Model, we continued onto setting up our code for viewing our prediction:
+
+| prior_2010   |   prediction |
+|:-------------|-------------:|
+| after_2010   |      1707.6  |
+| before_2010  |      3593.94 |
 
