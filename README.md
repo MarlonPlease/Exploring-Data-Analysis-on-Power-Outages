@@ -86,6 +86,7 @@ Dictionary for `'CAUSE.CATEGORY'`:
     'fuel supply emergency': 6,
     'islanding': 7
 }
+
 `U.S._STATE` with index bieng n+1(Example: Minnesota is 1 in the following data):
 ['Minnesota' 'Tennessee' 'Wisconsin' 'West Virginia' 'Michigan' 'Texas'
  'Indiana' 'Alabama' 'Mississippi' 'Illinois' 'Washington' 'Arizona'
