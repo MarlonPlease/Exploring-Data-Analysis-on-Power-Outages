@@ -35,13 +35,17 @@ For more background information about the dataset, please refer to the provided 
 
 ***Question Identification***
 
-(What is th equestion?)
+Null hypothesis: Our model is fair.
+Its precision for years before and after 2010 are roughly the same, and any differences are due to random chance.
+
+Alternative hypoethsis: Our model is unfair.
+Its precision for year prior to 2010 is lower than its precision for tear after 2010
 
 
 ---
 ## Framing the Problem
 
-This is the original cleaned powerDF from a previous project:
+This is the original formatted `powerDF` from a previous project:
 
 +-------+--------+---------+--------------+---------------+---------------+--------------------+-----------------+--------------------+--------------------+-------------------------+-------------------+-------------------+------------------+----------------------+-------------+-------------+-------------+---------------+-------------+-------------+-------------+---------------+--------------+--------------+--------------+-----------------+-----------------+-----------------+-------------------+----------------+----------------+----------------+--------------------+------------------+------------------+---------------------+----------------+-----------------+---------------+-----------------+--------------+----------------+-------------+----------------+-------------+----------------+-----------------+--------------+------------+-----------------+--------------------+---------------------+----------------------+
 |   OBS |   YEAR |   MONTH | U.S._STATE   | POSTAL.CODE   | NERC.REGION   | CLIMATE.REGION     |   ANOMALY.LEVEL | CLIMATE.CATEGORY   | CAUSE.CATEGORY     | CAUSE.CATEGORY.DETAIL   |   HURRICANE.NAMES |   OUTAGE.DURATION |   DEMAND.LOSS.MW |   CUSTOMERS.AFFECTED |   RES.PRICE |   COM.PRICE |   IND.PRICE |   TOTAL.PRICE |   RES.SALES |   COM.SALES |   IND.SALES |   TOTAL.SALES |   RES.PERCEN |   COM.PERCEN |   IND.PERCEN |   RES.CUSTOMERS |   COM.CUSTOMERS |   IND.CUSTOMERS |   TOTAL.CUSTOMERS |   RES.CUST.PCT |   COM.CUST.PCT |   IND.CUST.PCT |   PC.REALGSP.STATE |   PC.REALGSP.USA |   PC.REALGSP.REL |   PC.REALGSP.CHANGE |   UTIL.REALGSP |   TOTAL.REALGSP |   UTIL.CONTRI |   PI.UTIL.OFUSA |   POPULATION |   POPPCT_URBAN |   POPPCT_UC |   POPDEN_URBAN |   POPDEN_UC |   POPDEN_RURAL |   AREAPCT_URBAN |   AREAPCT_UC |   PCT_LAND |   PCT_WATER_TOT |   PCT_WATER_INLAND | OUTAGE.START        | OUTAGE.RESTORATION   |
@@ -53,10 +57,10 @@ This is the original cleaned powerDF from a previous project:
 |     5 |   2015 |       7 | Minnesota    | MN            | MRO           | East North Central |             1.2 | warm               | severe weather     | nan                     |               nan |              1740 |              250 |               250000 |       13.07 |       10.16 |        7.74 |         10.43 | 2.02888e+06 | 2.16161e+06 | 1.77794e+06 |   5.97034e+06 |      33.9826 |      36.2059 |      29.7795 |         2374674 |          289044 |            9812 |           2673531 |        88.8216 |        10.8113 |         0.367  |              54431 |            49844 |          1.09203 |                 1.7 |           4873 |          292023 |       1.6687  |             2.2 |      5489594 |          73.27 |       15.28 |           2279 |      1700.5 |           18.2 |            2.14 |          0.6 |    91.5927 |         8.40733 |            5.47874 | 2015-07-18 02:00:00 | 2015-07-19 07:00:00  |
 +-------+--------+---------+--------------+---------------+---------------+--------------------+-----------------+--------------------+--------------------+-------------------------+-------------------+-------------------+------------------+----------------------+-------------+-------------+-------------+---------------+-------------+-------------+-------------+---------------+--------------+--------------+--------------+-----------------+-----------------+-----------------+-------------------+----------------+----------------+----------------+--------------------+------------------+------------------+---------------------+----------------+-----------------+---------------+-----------------+--------------+----------------+-------------+----------------+-------------+----------------+-----------------+--------------+------------+-----------------+--------------------+---------------------+----------------------+
 
-We converted the "categorical" string columns such as `'CAUSE.CATEGORY'` into non-ordered "category" integers just in case we needed int values for processing.
+-We converted the "categorical" string columns such as `'CAUSE.CATEGORY'` into non-ordered "category" integers just in case we needed int values for processing.
 
-We felt the most important for analyzing were `'ANOMALY.LEVEL'`,`'CAUSE.CATEGORY'`, `'CLIMATE.CATEGORY'`
-powerDF_model.head() as shown:
+-We felt the most important for analyzing were `'ANOMALY.LEVEL'`,`'CAUSE.CATEGORY'`, `'CLIMATE.CATEGORY'`
+`powerDF_model.head()` as shown:
 
 +-------+--------+---------+------------------+-----------------+--------------------+--------------+------------------+-------------------+-----------------+---------------+
 |   OBS |   YEAR |   MONTH |   CLIMATE.REGION |   ANOMALY.LEVEL |   CLIMATE.CATEGORY |   U.S._STATE |   CAUSE.CATEGORY |   OUTAGE.DURATION |   PI.UTIL.OFUSA |   UTIL.CONTRI |
