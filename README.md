@@ -35,6 +35,9 @@ For more background information about the dataset, please refer to the provided 
 
 ***Question Identification***
 
+Upon looking at the dataset, we noticed that we wanted to predict the severity (in terms of duration,) of a major power outage; with that question in mind we formed a Null and Alternative hypothesis. This is a multivariable classification problem.
+For the metric, we decided on using 'accuracy'. In this scenario, where the risk of false positives and false negatives is approximately equal, accuracy would be the preferred metric. Accuracy measures the overall correctness of the predictions by considering both true positives and true negatives.
+
 Null hypothesis: Our model is fair.
 Its precision for years before and after 2010 are roughly the same, and any differences are due to random chance.
 
@@ -100,11 +103,24 @@ Dictionary for `'CAUSE.CATEGORY'`:
 
 ---
 ## Baseline Model
-Upon creating the pipeline, we used a `OneHotEncoder` on  the `'CLIMATE.CATEGORY'`, and the `'CLIMATE.REGION'` column. We felt it was apporpriate simply because they were representations of categories
+***Pipeline***
+Upon creating the pipeline, we used a column transformer called `OneHotEncoder` on  the `'CLIMATE.CATEGORY'`, and the `'CLIMATE.REGION'` column. We felt a OneHotEncoder was approrpriate simply because the columns used were representation of categories; there items in the column were not meant to be ranked.
+
+***Performance***
+To get the performance we used `pl_base.score(X_test_base, y_test_base)` which ended up giving us a value of:
+`0.07572815533980583`
+
+We felt that this was a decent score considering it was our first moddel.
 
 ---
 ## Final Model
+***Pipeline***
+For our updated pipeline, we started off with a 'QuantileTransformer()' on the `'ANOMALY.LEVEL'`, and the `'CAUSE.CATEGORY'` column.
+We also  re-used a column transformer called `OneHotEncoder` on  the `'CLIMATE.CATEGORY'`, and the `'CLIMATE.REGION'` column; this was present in the original pipeline.
 
+***Performance***
+To get the performance of our final model, we used `pl_base.score(X_test_base, y_test_base)` which ended up giving us a value of:
+`0.0854368932038835`
 
 ---
 ## Fairness Analysis
