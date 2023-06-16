@@ -73,6 +73,7 @@ This is the original formatted `powerDF` from a previous project, as one can see
 
 
 Dictionary for `'CLIMATE.CATEGORY'`:
+
 {
     'normal': 1,
     'cold': 2,
@@ -80,6 +81,7 @@ Dictionary for `'CLIMATE.CATEGORY'`:
 }
 
 Dictionary for `'CAUSE.CATEGORY'`:
+
 {
     'severe weather': 1,
     'intentional attack': 2,
@@ -91,6 +93,7 @@ Dictionary for `'CAUSE.CATEGORY'`:
 }
 
 `U.S._STATE` with index bieng n+1(Example: Minnesota is 1 in the following data):
+
 ['Minnesota' 'Tennessee' 'Wisconsin' 'West Virginia' 'Michigan' 'Texas'
  'Indiana' 'Alabama' 'Mississippi' 'Illinois' 'Washington' 'Arizona'
  'Maryland' 'Pennsylvania' 'Kentucky' 'Utah' 'Ohio' 'North Carolina'
