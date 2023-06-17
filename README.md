@@ -156,3 +156,6 @@ after running, our `"obs"` value is `0.02527818093855827`
 
 Afterwards, we do a hypothesis test. This is the output:
 <iframe src="assets/difference.html" width=800 height=600 frameBorder=0></iframe>
+
+Observed difference is not statistically significant and could be due to random chance. 
+We "accept" the null hypothesis, indicating that there is no evidence of an unfair model.
