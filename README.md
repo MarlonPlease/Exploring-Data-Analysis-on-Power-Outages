@@ -150,6 +150,6 @@ Afterwards, it led us to another dataframe, this time for "accuracy":
 | before_2010  |      0.014151 |
 
 Then next step was to find the "observed" value to find a signicant difference using this code:
-`obs = results.groupby('prior_2010').apply(lambda x: metrics.accuracy_score(x['CAUSE.CATEGORY'], x['CLIMATE.CATEGORY'])).diff().iloc[-1]
+`obs = results.groupby('prior_2010').apply(lambda x: metrics.accuracy_score(x['CAUSE.CATEGORY'], x['prediction'])).diff().iloc[-1]
 obs`
 after running, our `"obs"` value is `0.02527818093855827`
