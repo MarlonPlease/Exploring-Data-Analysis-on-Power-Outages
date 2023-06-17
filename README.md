@@ -130,6 +130,10 @@ We felt it was a slight improvement. Similar to the baseline model, the results 
 ---
 ## Fairness Analysis
 
+Here is a visualization of the false negative rates for `"ANAMOLY.LEVEL"`
+It is a False Negative rate by weather anamoly as we felt it was important.
+<iframe src="assets/fair1.html" width=800 height=600 frameBorder=0></iframe>
+
 After completeing out Baseline and Final Model, we continued onto setting up our code for viewing our prediction with this dataframe:
 
 | prior_2010   |   prediction |
