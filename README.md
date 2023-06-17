@@ -153,3 +153,6 @@ Then next step was to find the "observed" value to find a signicant difference u
 `obs = results.groupby('prior_2010').apply(lambda x: metrics.accuracy_score(x['CAUSE.CATEGORY'], x['prediction'])).diff().iloc[-1]
 obs`
 after running, our `"obs"` value is `0.02527818093855827`
+
+Afterwards, we do a hypothesis test. This is the output:
+<iframe src="assets/difference.html" width=800 height=600 frameBorder=0></iframe>
