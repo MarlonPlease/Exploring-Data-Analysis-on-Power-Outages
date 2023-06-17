@@ -38,10 +38,10 @@ For more background information about the dataset, please refer to the provided 
 Upon looking at the dataset, we noticed that we wanted to predict the severity (in terms of duration,) of a major power outage; with that question in mind we formed a Null and Alternative hypothesis. This is a multivariable classification problem.
 For the metric, we decided on using 'accuracy'. In this scenario, where the risk of false positives and false negatives is approximately equal, accuracy would be the preferred metric. Accuracy measures the overall correctness of the predictions by considering both true positives and true negatives.
 
-Null hypothesis: Our model is fair.
+***Null hypothesis:*** Our model is fair.
 Its precision for years before and after 2010 are roughly the same, and any differences are due to random chance.
 
-Alternative hypoethsis: Our model is unfair.
+***Alternative hypoethsis:*** Our model is unfair.
 Its precision for year prior to 2010 is lower than its precision for tear after 2010
 
 
