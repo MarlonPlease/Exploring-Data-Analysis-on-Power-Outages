@@ -1,5 +1,5 @@
 # Exploring Data Analysis on Power Outages
-by Marlon Garay (mjgaray@ucsd.edu) and Jiawei Li (jil237@ucsd.edu)
+by Marlon
 
 
 
